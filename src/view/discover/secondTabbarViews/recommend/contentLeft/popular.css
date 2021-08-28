@@ -1,0 +1,83 @@
+#popular_box{
+  width: 689px;
+  height: 523px;
+  /* margin: 0 auto; */
+}
+
+.popular_body{
+  margin: -9px 0 30px -42px;
+}
+
+.music_box{
+    float: left;
+    width: 140px;
+    height: 204px;
+    padding-left: 42px;
+    overflow: hidden;
+    padding: 0 0 30px 42px;
+    line-height: 1.4;
+}
+
+.box_bg{
+  position: relative;
+
+}
+
+.box_bg>a>img{
+  width: 140px;
+  height: 140px;
+}
+
+.bg_tab{
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  color: #ccc;
+  width: 140px;
+  height: 27px;
+  background-image: url(~assets/img/coverall.png);
+  background-position: 0 -537px;
+}
+
+.icon_listen,.li_num{
+    font-size: 13px !important;
+}
+
+.icon_listen{
+  margin: 3px 5px 0 10px;
+  float: left;
+}
+
+.li_num{
+  margin-top: 3px;
+}
+
+.icon_play{
+  float: right !important;
+  font-size: 14px !important;
+  margin: 3px 10px ;
+}
+
+.icon_play:hover{
+  cursor: pointer;
+}
+
+.icon_play_white{
+  color: white;
+}
+
+
+.box_bottom{
+  margin: 5px 0 3px;
+  font-size: 14px;
+  width: 140px;
+}
+
+.box_bottom>a{
+  max-width: 100%;
+}
+
+.icon_listen,.icon_play,.li_num{
+  font-size: 5px;
+  float: left;
+}
