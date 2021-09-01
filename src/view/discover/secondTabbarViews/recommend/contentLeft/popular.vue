@@ -41,62 +41,13 @@
 
 <script>
 import boxTitle from 'components/boxTitle/boxTitle'
+import {getData} from '@/request/axiosSub'
 
 export default {
   name: "popular",
   data () {
     return {
-      popularArr:[
-        {
-          src:'http://p1.music.126.net/iWAs5ZXtZT1iyHD-yj_1TA==/109951165443757011.jpg?',
-          id:1,
-          num:'229万',
-          writ:'你费尽心思错过我 是为了遇见谁'
-        },
-        {
-          src:'http://p1.music.126.net/yctLm3Qf-0txRD8Bh4dpUA==/109951165423398111.jpg?',
-          id:2,
-          num:'74万',
-          writ:'云音乐·严选评论过十万的歌10w⁺'
-        },
-        {
-          src:'http://p1.music.126.net/YwaTKL7a8_oVgxGNlJ4UrQ==/109951165742069449.jpg?',
-          id:3,
-          num:'101万',
-          writ:'我這麼差勁怎麼會成為別人的遺憾.'
-        },
-        {
-          src:'http://p2.music.126.net/IPRAmx1Wql94xVczatFDVQ==/109951166254326124.jpg?',
-          id:4,
-          num:'63242',
-          writ:'男友考研不工作，要我养他？'
-        },
-        {
-          src:'http://p1.music.126.net/Du8yFejFSqukIqbV0IhKuA==/109951165742954582.jpg?',
-          id:5,
-          num:'168万',
-          writ:'失恋必听：你是我绕不开的回忆'
-        },
-        {
-          src:'http://p2.music.126.net/07l609B4LGwXBoEaAmm3LQ==/109951166280621838.jpg?',
-          id:6,
-          num:'6286',
-          writ:'太空放风 Chapter2：在我的心里，有一个指南针'
-        },
-        {
-          src:'http://p1.music.126.net/fob5pHV3xzGlJ_-KEeLFLg==/109951165693966983.jpg?',
-          id:7,
-          num:'5744万',
-          writ:'我想你了 其实我也很脆弱'
-        },
-        {
-          src:'http://p2.music.126.net/Oo1KllOiSWiqYP68o35KWQ==/19231557882071838.jpg?',
-          id:8,
-          num:'23万',
-          writ:'偷偷-softlipa'
-        }
-
-      ],
+      popularArr:[],
       has:true,
       iconNum:-1
     }
@@ -104,6 +55,16 @@ export default {
   components:{
     boxTitle
 
+  },
+  created(){
+    //获取新碟数据
+    getData("popular.json")
+    .then(res=>{  
+      this.popularArr = res.popularArr;
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   },
   methods:{
     showIcon1(index){

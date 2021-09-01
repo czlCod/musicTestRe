@@ -2,6 +2,7 @@
   <div class="list_box">
     <box-title :hasul="has">
       <p slot="title_p">榜单</p>
+      
     </box-title>
 
     <div class="list_wrap">

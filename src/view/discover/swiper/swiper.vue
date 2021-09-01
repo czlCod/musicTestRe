@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import {getData} from '@/request/axiosSub'
 import {imgChange} from '../../../assets/js/baseUse'
 export default {
   name: "swiper",
@@ -51,57 +52,27 @@ export default {
       timeOne:null,
       swiperImg:[
         {
-          url:require('img/one.jpg'),
+          url:'http://p1.music.126.net/O3shiMLEMcRYq98vMfy-OQ==/109951166339100297.jpg',
           id:1
         },
-        {
-          url:require('img/two.jpg'),
-          id:2
-        },
-        {
-          url:require('img/three.jpg'),
-          id:3
-        },
-        {
-          url:require('img/four.jpg'),
-          id:4
-        },
-        {
-          url:require('img/five.jpg'),
-          id:5
-        },
-        {
-          url:require('img/six.jpg'),
-          id:6
-        },
-        {
-          url:require('img/seven.jpg'),
-          id:7
-        },
-        {
-          url:require('img/eight.jpg'),
-          id:8
-        },
-        {
-          url:require('img/nine.jpg'),
-          id:9
-        },
-        {
-          url:require('img/ten.jpg'),
-          id:10
-        }
+       
       ]
     }
   },
-  computed:{
- 
-
-
+  created(){
+    //获取轮播图图片
+    getData("swiper.json").then(res=>{  
+      this.swiperImg = res.swiperImg;
+    })
+    
   },
   mounted(){
+    
+    // this.$data.swiperImg = getData("swiper.json").PromiseResult.swiperImg
     //页面加载后打开计时器
     this.autoSwiper()
     this.timeOne=setInterval(this.autoSwiper,2200)
+    
     
   },
     //页面关闭时关闭计时器
@@ -109,6 +80,9 @@ export default {
     this.stopTimer()
   },
   methods:{
+    // 获取swiperImg数组
+   
+
     // 计时器函数
     autoSwiper(){
       const swiperWin = document.getElementById('swiperWin')

@@ -4,7 +4,6 @@ export const imgChange=(currentIndex,length,isTrue)=>{
   let currentIndex1 = currentIndex;
   let length1 = length-1;
   let isTrue1 = isTrue;
-
   if(isTrue1)
   {
     if(currentIndex1<=0){

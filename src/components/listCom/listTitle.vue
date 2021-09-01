@@ -8,7 +8,7 @@
     </div>
 
     <div class="title_right">
-      <div class="Title_text"><h3>飙升榜</h3></div>
+      <div class="Title_text"><slot name="titleText"></slot></div>
       <div class="Title_icon">
           <span class="icon1 iconfont icon-bofang0"></span>
           <span class="icon2 iconfont icon-shoucangjia0"></span>
