@@ -10,6 +10,7 @@
       <list-com></list-com>
     </div>
 
+
   </div>
 </template>
 
@@ -17,19 +18,14 @@
 import boxTitle from 'components/boxTitle/boxTitle'
 import listCom from 'components/listCom/listCom'
 
+
 export default {
   components: { boxTitle },
   name: "list",
   data () {
     return {
       has:false,
-       listArr:[
-        {
-          id:1,
-          name:'飙升榜',
-          src:'http://p3.music.126.net/DrRIg6CrgDfVLEph9SNh7w==/18696095720518497.jpg', 
-        }
-      ]
+       listArr:[]
     }
   },
   components:{

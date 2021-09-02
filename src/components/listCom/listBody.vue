@@ -11,7 +11,7 @@
           <span class="iconAll iconfont icon-bofang0"></span>
         </div>
       </li>
-      <span class="watchAll"><a href="#">查看全部></a></span>
+      <span class="watchAll"><a href="#" @click="goTopList()">查看全部></a></span>
     </ul>
 
   
@@ -25,7 +25,13 @@ export default {
       
     }
   },
-  props:['list'],
+  props:{
+    list:{
+      type:Array
+    },
+    listId:{
+      type:Number
+    }},
   methods:{
     showRbox(index){
       let songName = document.getElementsByClassName("songName")[index];
@@ -38,6 +44,9 @@ export default {
       let iconThree = document.getElementsByClassName("three_icon")[index];
       songName.style.width = 170+'px';
       iconThree.style.display = "none"
+    },
+    goTopList(){
+      this.$router.push({name:'排行榜',query:{listId:this.listId}})
     }
     
   }
