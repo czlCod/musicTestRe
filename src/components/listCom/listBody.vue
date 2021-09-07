@@ -2,7 +2,7 @@
 <template>
   
     <ul class="list_body">
-      <li v-for="(item,index) in list" :key="item.id" :class="[(index+1)%2==0?'colorChange2':'colorChange1']" @mouseover="showRbox(index)" @mouseout="hiddenRbox(index)">
+      <li v-for="(item,index) in list" :key="item.id" :class="[(index+1)%2==0?'colorChange2':'colorChange1']" @mouseenter="showRbox(index+num)" @mouseleave="hiddenRbox(index+num)">
         <span class="songNum" :class="[index<3?'numColor':'']">{{index+1}}</span>
         <a href="#" class="songName">{{item.name}}</a>
         <div class="three_icon">
@@ -31,17 +31,23 @@ export default {
     },
     listId:{
       type:Number
-    }},
+    },
+    num:{
+      type:Number
+    }
+    },
   methods:{
     showRbox(index){
       let songName = document.getElementsByClassName("songName")[index];
-      let iconThree = document.getElementsByClassName("three_icon")[index]
+      let iconThree = document.getElementsByClassName("three_icon")[index];
+      songName.style.textDecoration='underline';
       songName.style.width = 92+'px';
       iconThree.style.display = "block";
     },
     hiddenRbox(index){
       let songName = document.getElementsByClassName("songName")[index];
       let iconThree = document.getElementsByClassName("three_icon")[index];
+      songName.style.textDecoration='none';
       songName.style.width = 170+'px';
       iconThree.style.display = "none"
     },

@@ -6,21 +6,21 @@
       <img slot="titleImg" :src="titleImg[0]" alt="飙升榜">
       <h3 slot="titleText">飙升榜</h3>
     </list-title>
-    <list-body :list="listFirst" :listId="list1Id"></list-body>
+    <list-body :list="listFirst" :listId="list1Id" :num=0></list-body>
     </div>
     <div class="list_wrap1 lo">
       <list-title>
       <img slot="titleImg" :src="titleImg[1]" alt="新歌榜">
       <h3 slot="titleText">新歌榜</h3>
     </list-title>
-    <list-body :list="listSecond" :listId="list2Id"></list-body>
+    <list-body :list="listSecond" :listId="list2Id" :num=10></list-body>
     </div>
     <div class="list_wrap1 lo">
       <list-title>
       <img slot="titleImg" :src="titleImg[2]" alt="原创榜">
       <h3 slot="titleText">原创榜</h3>
     </list-title>
-    <list-body :list="listThird" :listId="list3Id"></list-body>
+    <list-body :list="listThird" :listId="list3Id" :num=20></list-body>
     </div>
     
 <button id="changeBtn" @click="changeBtn()">点击我切换数据</button>
